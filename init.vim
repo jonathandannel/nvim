@@ -1,15 +1,18 @@
 call plug#begin(stdpath('data') . '/plugs')
-Plug 'scrooloose/nerdtree'
-Plug 'morhetz/gruvbox'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-obsession'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme gruvbox
@@ -33,7 +36,6 @@ let g:airline_theme='gruvbox'
 " Settings
 syntax enable
 :set termguicolors
-:set background=dark
 :set relativenumber
 :set numberwidth=3
 
@@ -70,3 +72,27 @@ let g:closetag_regions = {
     \ 'javascript.jsx': 'jsxRegion',
     \ }
 let g:closetag_shortcut = '>'
+
+" Transparent background
+:hi! Normal guibg=NONE
+
+" Yank to system clipboard
+:set clipboard=unnamedplus
+
+"Indentation
+:set tabstop=2
+:set autoindent
+:set expandtab
+:set shiftround
+:set shiftwidth=2
+:set smarttab
+
+"Searching
+:set ignorecase
+:set smartcase
+
+"Coc
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-prettier']
+let g:coc_disable_startup_warning = 1
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+let g:prettier#autoformat = 1
