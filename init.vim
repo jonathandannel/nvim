@@ -1,16 +1,21 @@
 call plug#begin(stdpath('data') . '/plugs')
-Plug 'airblade/vim-gitgutter'
 Plug 'alvan/vim-closetag'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'clojure-vim/async-clj-omni'
+Plug 'guns/vim-clojure-static'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'morhetz/gruvbox'
+Plug 'arzg/vim-substrata'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
+Plug 'franbach/miramare'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -31,10 +36,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='gruvbox'
+let g:airline_theme='base16_eighties'
 
 " Settings
 syntax enable
+filetype plugin indent on
 :set termguicolors
 :set relativenumber
 :set numberwidth=3
@@ -81,7 +87,6 @@ let g:closetag_shortcut = '>'
 
 "Indentation
 :set tabstop=2
-:set autoindent
 :set expandtab
 :set shiftround
 :set shiftwidth=2
@@ -96,3 +101,9 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 let g:coc_disable_startup_warning = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
+
+"Rainbow parens
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
