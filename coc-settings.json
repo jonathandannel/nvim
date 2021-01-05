@@ -6,15 +6,5 @@
     "typescriptreact",
     "json",
     "graphql"
-  ],
-  "languageserver": {
-    "clojure-lsp": {
-      "command": "zsh",
-      "args": ["-c", "clojure-lsp"],
-      "filetypes": ["clojure"],
-      "rootPatterns": ["project.clj"],
-      "additionalSchemes": ["jar", "zipfile"],
-      "trace.server": "verbose"
-    }
-  }
+  ]
 }

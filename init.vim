@@ -1,10 +1,7 @@
 call plug#begin(stdpath('data') . '/plugs')
 Plug 'alvan/vim-closetag'
-Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'clojure-vim/async-clj-omni'
-Plug 'guns/vim-clojure-static'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'preservim/nerdcommenter'
@@ -15,8 +12,10 @@ Plug 'tpope/vim-obsession'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
 Plug 'venantius/vim-cljfmt'
+Plug 'guns/vim-clojure-static'
 call plug#end()
 
 " NERDTree
@@ -104,3 +103,4 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
