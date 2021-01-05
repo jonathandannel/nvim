@@ -35,6 +35,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme='gruvbox'
+let g:airline#extensions#ale#enabled = 1
 
 " Settings
 "syntax enable
@@ -106,3 +107,10 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+
+" ALE
+let g:ale_linters = {
+\   'clojure': ['joker'],
+\}
+
+let g:ale_linters_explicit = 1
