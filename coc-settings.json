@@ -14,8 +14,7 @@
       "filetypes": ["clojure"],
       "rootPatterns": ["project.clj"],
       "additionalSchemes": ["jar", "zipfile"],
-      "trace.server": "verbose",
-      "initializationOptions": {}
+      "trace.server": "verbose"
     }
   }
 }

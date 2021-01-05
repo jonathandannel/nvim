@@ -6,7 +6,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'clojure-vim/acid.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'clojure-vim/async-clj-omni'
 Plug 'guns/vim-clojure-static'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'morhetz/gruvbox'
 Plug 'arzg/vim-substrata'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -16,11 +15,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-obsession'
 Plug 'franbach/miramare'
+Plug 'sjl/badwolf'
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'tpope/vim-fireplace'
+Plug 'venantius/vim-cljfmt'
 call plug#end()
-
-colorscheme gruvbox
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
@@ -36,10 +38,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='base16_eighties'
+let g:airline_theme='gruvbox'
 
 " Settings
-syntax enable
+"syntax enable
 filetype plugin indent on
 :set termguicolors
 :set relativenumber
@@ -79,9 +81,6 @@ let g:closetag_regions = {
     \ }
 let g:closetag_shortcut = '>'
 
-" Transparent background
-:hi! Normal guibg=NONE
-
 " Yank to system clipboard
 :set clipboard=unnamedplus
 
@@ -102,7 +101,10 @@ let g:coc_disable_startup_warning = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
 
-"Rainbow parens
+colorscheme gruvbox
+
+:hi! Normal guibg=NONE
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
