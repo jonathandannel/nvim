@@ -16,6 +16,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fireplace'
 Plug 'venantius/vim-cljfmt'
 Plug 'guns/vim-clojure-static'
+Plug 'guns/vim-clojure-highlight'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 " NERDTree
