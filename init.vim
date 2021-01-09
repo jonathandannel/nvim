@@ -18,7 +18,18 @@ Plug 'venantius/vim-cljfmt'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'dense-analysis/ale'
+"""
+Plug 'relastle/bluewery.vim'
+Plug 'Rigellute/rigel'
+Plug 'severij/vadelma'
+Plug 'challenger-deep-theme/vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/edge'
+Plug 'lithammer/vim-eighties'
+Plug 'flrnd/candid.vim'
+Plug 'flrnd/plastic.vim'
 call plug#end()
+
 
 " NERDTree
 let g:NERDTreeShowHidden = 1
@@ -38,7 +49,7 @@ let g:airline_theme='gruvbox'
 let g:airline#extensions#ale#enabled = 1
 
 " Settings
-"syntax enable
+syntax enable
 filetype plugin indent on
 :set termguicolors
 :set relativenumber
@@ -98,7 +109,6 @@ let g:coc_disable_startup_warning = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
 
-colorscheme gruvbox
 
 :hi! Normal guibg=NONE
 
@@ -107,6 +117,8 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+
+colorscheme bluewery
 
 " ALE
 let g:ale_linters = {
