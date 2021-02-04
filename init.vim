@@ -18,7 +18,11 @@ Plug 'venantius/vim-cljfmt'
 Plug 'guns/vim-clojure-static'
 Plug 'guns/vim-clojure-highlight'
 Plug 'dense-analysis/ale'
-"""
+Plug 'iamcco/markdown-preview.nvim', 
+  { 'do': { -> mkdp#util#install() },
+    'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+""" Color schemes
 Plug 'relastle/bluewery.vim'
 Plug 'Rigellute/rigel'
 Plug 'severij/vadelma'
@@ -45,7 +49,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline_theme='gruvbox'
+let g:airline_theme='bluewery'
 let g:airline#extensions#ale#enabled = 1
 
 " Settings
@@ -109,9 +113,6 @@ let g:coc_disable_startup_warning = 1
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 let g:prettier#autoformat = 1
 
-
-:hi! Normal guibg=NONE
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
@@ -119,6 +120,9 @@ au Syntax * RainbowParenthesesLoadBraces
 
 
 colorscheme bluewery
+
+":hi! Normal guibg=NONE
+
 
 " ALE
 let g:ale_linters = {
